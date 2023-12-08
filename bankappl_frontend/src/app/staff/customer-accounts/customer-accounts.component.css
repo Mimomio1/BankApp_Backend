@@ -1,0 +1,62 @@
+.gobtn {
+  background-color: rgb(16, 141, 243);
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
+}
+
+.pagination a {
+  margin-left: auto;
+  margin-right: auto;
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.pagination a.active {
+  background-color: dodgerblue;
+  color: white;
+}
+
+.pagination a:hover:not(.active) {
+  background-color: #ddd;
+}
+
+.dashboard-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.transferbtn {
+  background-color: rgb(16, 141, 243);
+}
+
+.dashboarduser {
+  align-content: flex-end;
+}
+
+.nav-item {
+  font-size: 12px;
+}
+
+.content1 {
+  margin-top: 30px;
+  display: flex;
+}
+
+.content2 {
+  list-style-type: none;
+  display: inline-block;
+  align-content: flex-end;
+}
+
+.main-content {
+  margin-top: 20px;
+}

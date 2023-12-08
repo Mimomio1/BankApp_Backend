@@ -1,0 +1,37 @@
+.dashboard-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.transferbtn {
+  background-color: rgb(16, 141, 243);
+}
+
+.dashboarduser {
+  align-content: flex-end;
+}
+
+.nav-item {
+  font-size: 12px;
+}
+
+.submitbtn {
+  background-color: rgb(16, 141, 243);
+}
+
+.dashboarduser {
+  align-content: flex-end;
+}
+
+.nav-item {
+  font-size: 12px;
+}
+
+.main-content {
+  margin-top: 20px;
+  text-align: center;
+  border: 5px solid black;
+  padding: 15px;
+}

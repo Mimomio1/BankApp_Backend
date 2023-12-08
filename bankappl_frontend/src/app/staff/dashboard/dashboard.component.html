@@ -1,0 +1,46 @@
+<a routerLink="/staff/login">Log out</a>
+<div class="dashboard-header">
+  <div>
+    <img src="assets/images/bank-img-1.jpg" style="height: 80px" alt="" />
+    <button
+      class="transferbtn"
+      routerLink="/staff/transfer"
+      routerLinkActive="active"
+    >
+      Transfer
+    </button>
+  </div>
+  <h6 class="dashboarduser">Welcome, staff number: {{ staffId }}</h6>
+</div>
+<div>
+  <h1 style="text-align: center">Dashboard</h1>
+</div>
+<nav class="nav nav-pills nav-fill">
+  <a class="nav-item nav-link active" routerLink="/staff/dashboard"
+    >Dashboard</a
+  >
+  <a
+    class="nav-item nav-link"
+    routerLink="/staff/customer-accounts"
+    routerLinkActive="active"
+    >View Accounts</a
+  >
+  <a
+    class="nav-item nav-link"
+    routerLink="/staff/approve-beneficiary"
+    routerLinkActive="active"
+    >Approve Beneficiary</a
+  >
+  <a
+    class="nav-item nav-link"
+    routerLink="/staff/approve-account"
+    routerLinkActive="active"
+    >Approve Account</a
+  >
+  <a
+    class="nav-item nav-link"
+    routerLink="/staff/enable-disable-customer"
+    routerLinkActive="active"
+    >View All Customers</a
+  >
+</nav>

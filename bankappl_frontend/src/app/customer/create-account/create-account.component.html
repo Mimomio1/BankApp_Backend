@@ -1,0 +1,106 @@
+<div class="dashboard-header">
+  <img src="assets/images/bank-img-1.jpg" style="height: 80px" alt="" />
+  <a routerLink="/customer/profile">Profile</a>
+
+  <a href="">Logout</a>
+
+  <h6 class="dashboarduser">Welcome, customer: {{ customerId }}</h6>
+</div>
+<div>
+  <h1 style="text-align: center">Create Account</h1>
+</div>
+<nav class="nav nav-pills nav-fill">
+  <a
+    routerLink="/customer/createAccount"
+    class="nav-item nav-link"
+    routerLinkActive="active"
+    >Create Account</a
+  >
+  <a
+    class="nav-item nav-link"
+    routerLink="/customer/addBeneficiary"
+    routerLinkActive="active"
+    >Add Beneficiary</a
+  >
+  <a
+    class="nav-item nav-link"
+    routerLink="/customer/removeBeneficiary"
+    routerLinkActive="active"
+    >Remove Beneficiary</a
+  >
+  <a
+    class="nav-item nav-link"
+    routerLink="/customer/transfer"
+    routerLinkActive="active"
+    >Transfer Money</a
+  >
+  <a
+    class="nav-item nav-link"
+    routerLink="/customer/accountDetails"
+    routerLinkActive="active"
+    >View Statement</a
+  >
+</nav>
+
+<div class="main-content">
+  <div id="create">
+    <form name="myForm" (ngSubmit)="onSubmit()">
+      <label class="form-label" for="initialDeposit">$ Initial Deposit</label>
+      <div class="form-outline mb-4">
+        <input
+          type="number"
+          min="0"
+          id="initialDeposit"
+          class="form-control form-control-lg"
+          placeholder="Enter Initial Deposit"
+          [(ngModel)]="account.accountBalance"
+          name="initialDeposit"
+          required
+        />
+      </div>
+      <h5 class="fw-normal mb-2 pb-2" style="letter-spacing: 1px">
+        Select Type Of Account
+      </h5>
+      <div style="border: 1px solid; padding: 5px">
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="accountType"
+            id="savingAccount"
+            [value]="accountType.SAVINGS"
+            [(ngModel)]="account.accountType"
+          />
+          <label
+            class="form-check-label"
+            style="margin-left: 15px"
+            for="savingAccount"
+            >Savings Account</label
+          >
+        </div>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="accountType"
+            id="checkingAccount"
+            [value]="accountType.CHECKING"
+            [(ngModel)]="account.accountType"
+          />
+          <label
+            class="form-check-label"
+            style="margin-left: 15px"
+            for="checkingAccount"
+          >
+            Current Account</label
+          >
+        </div>
+      </div>
+      <br />
+      <input type="submit" class="submitbtn" value="Submit" />
+    </form>
+  </div>
+  <!-- <div [hidden]="!submitted" style="text-align: center">
+    <h4>You successfully created the account!</h4>
+  </div> -->
+</div>

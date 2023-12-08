@@ -1,0 +1,66 @@
+<div class="dashboard-header">
+  <div>
+    <img src="assets/images/bank-img-1.jpg" style="height: 80px" alt="" />
+  </div>
+
+  <a routerLink="/viewstaff" class="nav-item nav-link" routerLinkActive="active"
+    >Super Admin</a
+  >
+</div>
+<br />
+<a routerLink="/staff/login">Log out</a>
+<nav class="nav nav-pills nav-fill">
+  <a
+    routerLink="/admin/registerStaff"
+    class="nav-item nav-link"
+    routerLinkActive="active"
+    >Create Staff</a
+  >
+  <a
+    routerLink="/admin/viewStaff"
+    class="nav-item nav-link active"
+    routerLinkActive="active"
+    >View Staff</a
+  >
+</nav>
+<div>
+  <h1 style="text-align: center">View All Staff Accounts</h1>
+</div>
+<div id="view" class="tab">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Enable/Disable Customer</th>
+      </tr>
+    </thead>
+    <tr>
+      <th>Staff name</th>
+      <th>Staff Username</th>
+      <th>Enable/Disable</th>
+    </tr>
+    <tbody class="align-middle" *ngFor="let staff of staffs">
+      <tr>
+        <td>{{ staff.staffName }}</td>
+        <td>{{ staff.staffUserName }}</td>
+        <td *ngIf="staff.status == 'ENABLED'">
+          <button
+            type="button"
+            class="btn btn-success"
+            (click)="setDisableStatus(staff.staffId)"
+          >
+            Enabled
+          </button>
+        </td>
+        <td *ngIf="staff.status == 'DISABLED'">
+          <button
+            type="button"
+            class="btn btn-danger"
+            (click)="setEnableStatus(staff.staffId)"
+          >
+            Disabled
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

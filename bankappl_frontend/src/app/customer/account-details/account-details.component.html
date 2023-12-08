@@ -1,0 +1,121 @@
+<div class="dashboard-header">
+  <img src="assets/images/bank-img-1.jpg" style="height: 80px" alt="" />
+  <a routerLink="/customer/profile">Profile</a>
+
+  <a href="">Logout</a>
+
+  <h6 class="dashboarduser">Welcome, customer: {{ customerId }}</h6>
+</div>
+<div>
+  <h1 style="text-align: center">Account Details</h1>
+</div>
+<nav class="nav nav-pills nav-fill">
+  <a
+    routerLink="/customer/createAccount"
+    class="nav-item nav-link"
+    routerLinkActive="active"
+    >Create Account</a
+  >
+  <a
+    class="nav-item nav-link"
+    routerLink="/customer/addBeneficiary"
+    routerLinkActive="active"
+    >Add Beneficiary</a
+  >
+  <a
+    class="nav-item nav-link"
+    routerLink="/customer/removeBeneficiary"
+    routerLinkActive="active"
+    >Remove Beneficiary</a
+  >
+  <a
+    class="nav-item nav-link"
+    routerLink="/customer/transfer"
+    routerLinkActive="active"
+    >Transfer Money</a
+  >
+  <a
+    class="nav-item nav-link"
+    routerLink="/customer/accountDetails"
+    routerLinkActive="active"
+    >View Statement</a
+  >
+</nav>
+<div class="main-content">
+  <div id="view">
+    <div class="content-1">
+      <div class="input-group">
+        <select
+          class="form-select"
+          id="sel1"
+          [(ngModel)]="accountDetails.accountNumber"
+          (ngModelChange)="changeAccountNumber($event)"
+        >
+          <option selected="true" disabled="disabled" [value]="undefined">
+            Please Click To Select Account
+          </option>
+          <option
+            *ngFor="let account of accounts"
+            [value]="account.accountNumber"
+          >
+            {{ account.accountNumber }}
+          </option>
+        </select>
+      </div>
+      <br />
+      <br />
+      <div class="view2">
+        <label for="account">Account:</label>
+        <input
+          type="number"
+          name="account"
+          placeholder="{{ accountDetails.accountNumber }}"
+          id="account"
+          *ngIf="accountDetails"
+          readonly
+        />
+        <br />
+        <label for="balance">Balance:</label>
+        <input
+          type="number"
+          name="balance"
+          placeholder="{{ accountDetails.accountBalance }}"
+          id="balance"
+          *ngIf="accountDetails"
+          readonly
+        />
+      </div>
+    </div>
+    <br />
+    <div class="content-2">
+      <div>
+        <button
+          class="tn btn-primary btn-sm"
+          type="button"
+          style="margin-left: 80%; margin-bottom: 0.5%"
+          (click)="download()"
+        >
+          Download
+        </button>
+      </div>
+      <table style="width: 100%; margin-top: 15px; margin-bottom: 15px">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Amount</th>
+            <th>Reference</th>
+            <th>CR/DB</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let trans of transaction">
+            <td>{{ trans.date }}</td>
+            <td>{{ trans.amount }}</td>
+            <td>{{ trans.reference }}</td>
+            <td>{{ trans.transactionType }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

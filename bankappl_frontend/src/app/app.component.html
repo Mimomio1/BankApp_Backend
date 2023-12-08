@@ -1,0 +1,22 @@
+<nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a routerLink="" class="nav-link" routerLinkActive="active">Home</a>
+      <br />
+    </li>
+  </ul>
+</nav>
+<div class="container">
+  <br />
+  <h2 style="text-align: center; color: #2470dc">{{ title }}</h2>
+  <hr />
+  <div class="card">
+    <div class="card-body">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
+<footer style="text-align: center; margin-top: 20px">
+  Dudley, Marcus, Pritom, and Adeela,
+  <p>&copy; {{ today | date: "yyyy" }} &middot; Active Banker</p>
+</footer>
