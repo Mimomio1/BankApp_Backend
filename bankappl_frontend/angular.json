@@ -102,5 +102,8 @@
       }
     }
   },
-  "defaultProject": "bank-app-frontend"
+  "defaultProject": "bank-app-frontend",
+  "cli": {
+    "analytics": "7ef2f82e-1ebc-4ec6-a1cc-e51c4e6f95f1"
+  }
 }
